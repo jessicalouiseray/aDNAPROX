@@ -17,7 +17,7 @@ fi
 if [ "$1" = "test" ]
   then
     echo "Running in test mode"
-    filenames="$(cat test/filenames.txt)"
+    filenames="$(cat tests/filenames.txt)"
     for eachfile in $filenames
       do
         dirname=$(echo "$eachfile" | grep -E -o "$start_string.*?$stop_string")

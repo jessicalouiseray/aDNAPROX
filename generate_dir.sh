@@ -3,6 +3,7 @@
 # Find all files matching pattern and extract a substring
 # between start and stop character(s).
 
+HOMEDIR=${PWD}
 file_pattern="*"
 start_string="\-"
 stop_string="_"
@@ -27,7 +28,7 @@ if [ "$1" = "test" ]
           dirname=${dirname#"-"}
           dirname=${dirname%"_"}
           echo "Creating directory: $dirname"
-          echo "Moving $eachfile to: $dirname"
+          echo "Moving $eachfile to: $HOMEDIR/$dirname/$raw_data"
         fi
       done
 elif [ "$1" = "normal" ]

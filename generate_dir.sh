@@ -3,7 +3,8 @@
 # Find all files matching pattern and extract a substring
 # between start and stop character(s).
 
-HOMEDIR=${PWD}
+HOMEDIR="/Users/jra025/Documents/Work/Projects/aDNAPROX/Illumina_Rawdata/test"
+cd $HOMEDIR
 file_pattern="*"
 start_string="\-"
 stop_string="_"
@@ -44,6 +45,7 @@ elif [ "$1" = "normal" ]
           dirname=${dirname%"_"}
           echo "$dirname"
           mkdir -v "$dirname"
+          mkdir -v "$dirname/$raw_data"
           mv -v "$eachfile" "$dirname/$raw_data"
         fi
       done
